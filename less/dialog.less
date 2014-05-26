@@ -1,0 +1,65 @@
+// common
+@import 'common.less';
+// reset
+@import 'base.less';
+
+body{
+    font-size: 1.4em;
+    color: #666;
+}
+
+h2{
+    line-height: 3em;
+}
+
+p{
+    line-height: 2rem;
+    margin: 1rem 0;
+    text-indent: 2em;
+}
+
+a{
+    color: red;
+}
+
+.dialog_1,.dialog_2{
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 8;
+    line-height: 2rem;
+    padding: 10px;
+    text-align: center;
+    background-color: #fff;
+    .translate3d(-50%,-50%,0);
+    .transition(all .1s linear);
+    &.show{
+        visibility: visible;
+        opacity: 1;
+        &~.dialog_mask{
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}
+.dialog_1{
+    width: 200px;
+    height: 80px;
+}
+.dialog_2{
+    display: inline-block;
+}
+.dialog_mask{
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 7;
+    background-color: fade(#000, 50%);
+    .transition(all .3s linear);
+}

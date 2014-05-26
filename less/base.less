@@ -1,0 +1,47 @@
+/**
+ * @Description: reset
+ * @Author: zhanghang
+ * @Date: 20140424
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    /* 防止点击闪烁 */
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    /* 缩放网页，文字大小不变 */
+    -webkit-text-size-adjust:none;
+    /* 禁止选择 */
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+/* 修复img默认位置 */
+img{
+    vertical-align: top;
+}
+/* 去除虚线 */
+input:focus,select:focus,textarea:focus,button:focus{
+    outline: none;
+}
+a{
+    text-decoration: none;
+    /* ios禁止页面在新窗口打开 */
+    -webkit-touch-callout:none;
+}
+/* 允许表单选择 */
+input,textarea{
+    -webkit-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+/* 重置圆角和内阴影 */
+input[type="text"],input[type="tel"],input[type="number"],textarea{
+    -webkit-appearance:none;
+    border: 1px solid;
+    border-radius: 0;
+}
+/* 重置文字初始10px */
+html{
+    font-size: 10px;
+}

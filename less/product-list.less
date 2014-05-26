@@ -1,0 +1,55 @@
+// common
+@import 'common.less';
+// reset
+@import 'base.less';
+
+body{
+    font-size: 1.2em;
+}
+
+h2{
+    line-height: 3em;
+}
+
+// 左中右三栏列表
+.wrap{
+    border: 1px solid #ccc;
+    .item{
+        .flexbox();
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+        /* 侧轴对齐 */
+        -ms-flex-align:center;
+        -webkit-box-align:center;
+        box-align:center;
+        -webkit-align-items:center;
+        align-items:center;
+        &:last-child{
+            border-bottom:0 none;
+        }
+        .pic{
+            width: 60px;
+            height: 60px;
+        }
+        .title{
+            .flex();
+            line-height: 20px;
+            margin: 0 6px 0 10px;
+            font-size: 1.4rem;
+        }
+        &:after{
+            content: '';
+            display: block;
+            width: 8px;
+            height: 8px;
+            border-top:2px solid #bfbfbf;
+            border-right:2px solid #bfbfbf;
+            .rotate3d(0, 0, 1, 45deg)
+        }
+        &:first-child{
+            .title{
+                .ellipsis();
+            }
+        }
+    }
+}

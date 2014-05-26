@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimal-ui">
+    <title>弹窗</title>
+    <link rel="stylesheet" href="css/dialog.css">
+</head>
+<body>
+    <p>我只是测试文字，你懂的。反正我是占位符。我只是测试文字，你懂的。反正我是占位符。我只是测试文字，你懂的。反正我是占位符。</p>
+    <p>我只是测试文字，你懂的。<a class="btn_1" href="javascript:;">固定宽度弹窗1</a>反正我是占位符。我只是测试文字，你懂的。反正我是占位符。我只是测试文字，你懂的。反正我是占位符。</p>
+    <p>我只是测试文字，你懂的。反正我是占位符。我只是测试文字，你懂的。反正我是占位符。我只是测试文字，你懂的。反正我是占位符。</p>
+    <p>我只是测试文字，你懂的。<a href="http://m.yhd.com/">1号店</a>反正我是占位符。我只是测试文字，你懂的。反正我是占位符。我只是测试文字，你懂的。反正我是占位符。</p>
+    <p>我只是测试文字，你懂的。反正我是占位符。我只是测试文字，你懂的。反正我是占位符。我只是测试文字，你懂的。反正我是占位符。</p>
+    <p>我只是测试文字，你懂的。<a class="btn_2" href="javascript:;">不固定宽度弹窗2</a>反正我是占位符。我只是测试文字，你懂的。反正我是占位符。我只是测试文字，你懂的。反正我是占位符。</p>
+    <p>我只是测试文字，你懂的。反正我是占位符。我只是测试文字，你懂的。反正我是占位符。我只是测试文字，你懂的。反正我是占位符。</p>
+    <p>我只是测试文字，你懂的。反正我是占位符。我只是测试文字，你懂的。反正我是占位符。我只是测试文字，你懂的。反正我是占位符。</p>
+    <p>我只是测试文字，你懂的。反正我是占位符。我只是测试文字，你懂的。反正我是占位符。我只是测试文字，你懂的。反正我是占位符。</p>
+    <div class="dialog_1">我是弹窗，宽度200px，高度80px</div>
+    <div class="dialog_2">
+        我是弹窗，自动宽高<br>
+        就是不固定<br>
+        你打我啊<br>
+    </div>
+    <div class="dialog_mask"></div>
+<script>
+    window.onload = function(){
+        var $btn1 = document.querySelector('.btn_1'),
+            $btn2 = document.querySelector('.btn_2'),
+            $dialog1 = document.querySelector('.dialog_1'),
+            $dialog2 = document.querySelector('.dialog_2'),
+            $mask = document.querySelector('.dialog_mask');
+
+        $btn1.addEventListener('click',function(){
+            $dialog1.classList.add('show');
+        },false);
+        $btn2.addEventListener('click',function(){
+            $dialog2.classList.add('show');
+        },false);
+        $mask.addEventListener('click',function(){
+            $dialog1.classList.remove('show');
+            $dialog2.classList.remove('show');
+        },false);
+    }
+</script>
+</body>
+</html>

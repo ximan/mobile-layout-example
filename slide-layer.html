@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimal-ui">
+    <title>滑动浮层</title>
+    <link rel="stylesheet" href="css/slide-layer.css">
+</head>
+<body>
+    <p>我是可爱的占位符^_^我是可爱的占位符^_^</p>
+    <p>
+        <button type="button" class="btn_t">浮层上</button>
+    </p>
+    <p>
+        <button type="button" class="btn_b">浮层下</button>
+    </p>
+    <p>
+        <button type="button" class="btn_l">浮层左</button>
+    </p>
+    <p>
+        <button type="button" class="btn_r">浮层右</button>
+    </p>
+    <p>我是可爱的占位符^_^我是可爱的占位符^_^</p>
+    <p>我是可爱的占位符^_^我是可爱的占位符^_^</p>
+    <p>我是可爱的占位符^_^我是可爱的占位符^_^</p>
+    <p>我是可爱的占位符^_^我是可爱的占位符^_^</p>
+    <p>我是可爱的占位符^_^我是可爱的占位符^_^</p>
+    <p>我是可爱的占位符^_^我是可爱的占位符^_^</p>
+    <p>我是可爱的占位符^_^我是可爱的占位符^_^</p>
+    <p>我是可爱的占位符^_^我是可爱的占位符^_^</p>
+    <p>我是可爱的占位符^_^我是可爱的占位符^_^</p>
+    <p>我是可爱的占位符^_^我是可爱的占位符^_^</p>
+    <p>我是可爱的占位符^_^我是可爱的占位符^_^</p>
+    <p>我是可爱的占位符^_^我是可爱的占位符^_^</p>
+    <div class="layer layer_t">我是上面的小浮层</div>
+    <div class="layer layer_b">我是下面的小浮层</div>
+    <div class="layer layer_l">我是左边的小浮层</div>
+    <div class="layer layer_r">我是右边的小浮层</div>
+    <div class="layer_mask"></div>
+<script>
+    window.onload = function(){
+        var $btnT = document.querySelector('.btn_t'),
+            $btnB = document.querySelector('.btn_b'),
+            $btnL = document.querySelector('.btn_l'),
+            $btnR = document.querySelector('.btn_r'),
+            $layer = document.querySelectorAll('.layer'),
+            $layerT = document.querySelector('.layer_t'),
+            $layerB = document.querySelector('.layer_b'),
+            $layerL = document.querySelector('.layer_l'),
+            $layerR = document.querySelector('.layer_r'),
+            $layerMask = document.querySelector('.layer_mask');
+
+        $btnT.addEventListener('click',function(){
+            $layerT.classList.add('show');
+        },false);
+        $btnB.addEventListener('click',function(){
+            $layerB.classList.add('show');
+        },false);
+        $btnL.addEventListener('click',function(){
+            $layerL.classList.add('show');
+        },false);
+        $btnR.addEventListener('click',function(){
+            $layerR.classList.add('show');
+        },false);
+        $layerMask.addEventListener('click',function(){
+            for (var i = 0; i < $layer.length; i++) {
+                $layer[i].classList.remove('show');
+            };
+        },false);
+    }
+</script>
+</body>
+</html>

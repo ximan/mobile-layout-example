@@ -1,0 +1,92 @@
+/**
+ * @Description: common
+ * @Author: zhanghang
+ * @Date: 20140424
+ * @Note: 每个都加括号，避免和其他类名冲突
+*/
+
+/* CSS3前缀 */
+.flexbox(){
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+}
+.flex(@x:1){
+    -webkit-box-flex:@x;
+    -webkit-flex:@x;
+    -ms-flex:@x;
+    flex:@x;
+}
+.radius(@x:5px){
+    -webkit-border-radius: @x;
+    border-radius: @x;
+}
+.box-shadow(@shadow:0 0 5px #ccc){
+    box-shadow:@shadow;
+    -webkit-box-shadow:@shadow;
+}
+.box-sizing(@style:border-box){
+    -webkit-box-sizing: @style;
+    box-sizing:@style;
+}
+.transform-origin(...){
+    -webkit-transform-origin:@arguments;
+    transform-origin:@arguments;
+}
+.transform(...){
+    -webkit-transform:@arguments;
+    transform:@arguments;
+}
+.translate(@x:0; @y:0){
+    .transform(translate(@x, @y));
+}
+.translate3d(@x:0; @y:0; @z:0){
+    .transform(translate3d(@x, @y, @z));
+}
+.rotate(@degree:0){
+    .transform(rotate(@degree));
+}
+.rotate3d(@x:0; @y:0; @z:0; @degree:0){
+    .transform(rotate3d(@x, @y, @z, @degree));
+}
+.scale(@num:1){
+    .transform(scale(@num));
+}
+.scale3d(@x:1; @y:1; @z:1){
+    .transform(scale3d(@x, @y, @z));
+}
+.skew(@x:0; @y:0){
+    .transform(skew(@x, @y));
+}
+.transition(...){
+    -webkit-transition:@arguments;
+    transition:@arguments;
+}
+.gradient(@path; @colorX; @colorY){
+    background-image: -webkit-linear-gradient(@path, @colorX, @colorY);
+    background-image:-ms-linear-gradient(@path, @colorX, @colorY);
+}
+.animation(...){
+    -webkit-animation:@arguments;
+    animation:@arguments;
+}
+.user-select(@select: text){
+    -webkit-user-select:@select;
+    -ms-user-select:@select;
+    user-select:@select;
+}
+
+/* 简写 */
+.clearfix(){
+    &:after{
+        content:"";
+        display:table;
+        clear:both;
+    }
+}
+.ellipsis(){
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow:ellipsis;
+}

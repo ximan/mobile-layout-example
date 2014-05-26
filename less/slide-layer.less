@@ -1,0 +1,74 @@
+// common
+@import 'common.less';
+// reset
+@import 'base.less';
+
+body{
+    font-size: 1.4em;
+    background-color: #eee;
+}
+
+p{
+    margin: 3rem 0;
+    text-align: center;
+}
+button{
+    padding: 1rem 3rem;
+    background-color: #aaa;
+    color: #fff;
+}
+.layer{
+    position: fixed;
+    z-index: 8;
+    text-align: center;
+    line-height: 4rem;
+    background-color: #fff;
+    .transition(all .3s linear);
+    &.show{
+        .translate3d(0,0,0);
+        &~.layer_mask{
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}
+.layer_t{
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 200px;
+    .translate3d(0,-100%,0);
+}
+.layer_b{
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+    .translate3d(0,100%,0);
+}
+.layer_l{
+    left: 0;
+    top: 0;
+    width: 80%;
+    height: 100%;
+    .translate3d(-100%,0,0);
+}
+.layer_r{
+    right: 0;
+    top: 0;
+    width: 80%;
+    height: 100%;
+    .translate3d(100%,0,0);
+}
+.layer_mask{
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 7;
+    background-color: fade(#000, 50%);
+    .transition(all .3s linear);
+}
