@@ -1,0 +1,51 @@
+// common
+@import 'common.less';
+// reset
+@import 'base.less';
+
+body{
+    font-size: 1.2em;
+}
+
+h1{
+    line-height: 1.5em;
+    padding: .5em;
+}
+
+.wrap_1,.wrap_2,.wrap_3{
+    position: relative;
+    margin: 10%;
+    border: 1px solid #ccc;
+    .box{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+    }
+}
+// 模块比例缩放 方法1
+.wrap_1{
+    .pic{
+        width: 100%;
+        height: auto;
+    }
+}
+// 模块比例缩放 方法1
+.wrap_2{
+    &:after{
+        content: '';
+        display: block;
+        width: 100%;
+        padding-top: 100%;
+    }
+}
+.wrap_3{
+    &:after{
+        content: '';
+        display: block;
+        width: 100%;
+        padding-top: 50%;
+    }
+}
