@@ -11,41 +11,40 @@ h2{
     line-height: 3em;
 }
 
-// 固定大小垂直居中
+// Flexbox
 .wrap_1,.wrap_2{
-    .flexbox();
     height: 200px;
     border: 1px solid #ccc;
-    /* 主轴对齐 */
-    -ms-flex-pack:center;
-    -webkit-box-pack:center;
-    box-pack:center;
-    -webkit-justify-content:center;
-    justify-content:center;
-    /* 侧轴对齐 */
-    -ms-flex-align:center;
-    -webkit-box-align:center;
-    box-align:center;
-    -webkit-align-items:center;
-    align-items:center;
+    .display(flex);
+    .justify-content();
+    .align-items();
 }
-.wrap_1{
-    .block{
-        width: 100px;
-        height: 100px;
-        line-height: 100px;
-        background-color: red;
-        color: #fff;
-        text-align: center;
+// translate
+.wrap_3,.wrap_4{
+    position: relative;
+    height: 200px;
+    border: 1px solid #ccc;
+    .block,.inline{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        .translate(-50%,-50%);
     }
+}
+// 固定大小垂直居中
+.block{
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    background-color: red;
+    color: #fff;
+    text-align: center;
 }
 // 不固定大小垂直居中
-.wrap_2{
-    .inline{
-        display: inline-block;
-        line-height: 20px;
-        padding: 10px;
-        background-color: red;
-        color: #fff;
-    }
+.inline{
+    display: inline-block;
+    line-height: 20px;
+    padding: 10px;
+    background-color: red;
+    color: #fff;
 }

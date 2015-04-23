@@ -1,8 +1,7 @@
-<!doctype html>
-<html lang="zh-cn">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimal-ui">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0" charset="UTF-8">
     <title>弹窗</title>
     <link rel="stylesheet" href="css/dialog.css">
 </head>
@@ -13,6 +12,7 @@
     <p>我只是测试文字，你懂的。<a href="http://m.yhd.com/">1号店</a>反正我是占位符。我只是测试文字，你懂的。反正我是占位符。我只是测试文字，你懂的。反正我是占位符。</p>
     <p>我只是测试文字，你懂的。反正我是占位符。我只是测试文字，你懂的。反正我是占位符。我只是测试文字，你懂的。反正我是占位符。</p>
     <p>我只是测试文字，你懂的。<a class="btn_2" href="javascript:;">不固定宽度弹窗2</a>反正我是占位符。我只是测试文字，你懂的。反正我是占位符。我只是测试文字，你懂的。反正我是占位符。</p>
+    <p>我只是测试文字，你懂的。<a class="btn_3" href="javascript:;">Flexbox弹窗3</a>反正我是占位符。我只是测试文字，你懂的。反正我是占位符。我只是测试文字，你懂的。反正我是占位符。</p>
     <p>我只是测试文字，你懂的。反正我是占位符。我只是测试文字，你懂的。反正我是占位符。我只是测试文字，你懂的。反正我是占位符。</p>
     <p>我只是测试文字，你懂的。反正我是占位符。我只是测试文字，你懂的。反正我是占位符。我只是测试文字，你懂的。反正我是占位符。</p>
     <p>我只是测试文字，你懂的。反正我是占位符。我只是测试文字，你懂的。反正我是占位符。我只是测试文字，你懂的。反正我是占位符。</p>
@@ -22,13 +22,18 @@
         就是不固定<br>
         你打我啊<br>
     </div>
+    <div class="dialog_3">
+        <div class="inner">我是弹窗，宽度200px，高度80px</div>
+    </div>
     <div class="dialog_mask"></div>
 <script>
     window.onload = function(){
         var $btn1 = document.querySelector('.btn_1'),
             $btn2 = document.querySelector('.btn_2'),
+            $btn3 = document.querySelector('.btn_3'),
             $dialog1 = document.querySelector('.dialog_1'),
             $dialog2 = document.querySelector('.dialog_2'),
+            $dialog3 = document.querySelector('.dialog_3'),
             $mask = document.querySelector('.dialog_mask');
 
         $btn1.addEventListener('click',function(){
@@ -41,7 +46,17 @@
             $dialog1.classList.remove('show');
             $dialog2.classList.remove('show');
         },false);
-    }
+
+        $btn3.addEventListener('click',function(){
+            $dialog3.classList.add('show');
+        },false);
+        $dialog3.addEventListener('click',function(e){
+            var _target = e.target;
+            if(_target.classList.contains("dialog_3")){
+                this.classList.remove('show');
+            }
+        },false);
+    };
 </script>
 </body>
 </html>

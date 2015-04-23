@@ -1,11 +1,18 @@
-/**
- * @Description: common
- * @Author: zhanghang
- * @Date: 20140424
- * @Note: 每个都加括号，避免和其他类名冲突
-*/
-
-/* CSS3前缀 */
+.display(...){
+    display: @arguments;
+}
+.display(@value)when(@value=flex){
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:@value;
+}
+.display(@value)when(@value=inline-flex){
+    display:-webkit-inline-box;
+    display:-webkit-inline-flex;
+    display:-ms-inline-flexbox;
+    display:@value;
+}
 .flexbox(){
     display:-webkit-box;
     display:-webkit-flex;
@@ -17,6 +24,72 @@
     -webkit-flex:@x;
     -ms-flex:@x;
     flex:@x;
+}
+// 默认加webkit前缀
+.css-prefix(@property,@value){
+    -webkit-@{property}:@value;
+    @{property}:@value;
+}
+// row | column | row-reverse
+// 默认值：column
+.flex-direction(@value)when(@value=row){
+    -ms-flex-direction:@value;
+    .css-prefix(box-orient,horizontal);
+    .css-prefix(flex-direction,@value);
+}
+.flex-direction(@value:column)when(default()){
+    -ms-flex-direction:@value;
+    .css-prefix(box-orient,vertical);
+    .css-prefix(flex-direction,@value);
+}
+.flex-direction(@value)when(@value=row-reverse){
+    -ms-flex-direction:@value;
+    .css-prefix(box-direction,reverse);
+    .css-prefix(flex-direction,@value);
+}
+// flex-start | flex-end | center | space-between
+// 默认值：center
+.justify-content(@value)when(@value=flex-start){
+    -ms-flex-pack:start;
+    .css-prefix(box-pack,start);
+    .css-prefix(justify-content,@value);
+}
+.justify-content(@value)when(@value=flex-end){
+    -ms-flex-pack:end;
+    .css-prefix(box-pack,end);
+    .css-prefix(justify-content,@value);
+}
+.justify-content(@value:center)when(default()){
+    -ms-flex-pack:@value;
+    .css-prefix(box-pack,@value);
+    .css-prefix(justify-content,@value);
+}
+.justify-content(@value)when(@value=space-between){
+    -ms-flex-pack:justify;
+    .css-prefix(box-pack,justify);
+    .css-prefix(justify-content,@value);
+}
+// flex-start | flex-end | center | stretch
+// 默认值：center
+.align-items(@value)when(@value=flex-start){
+    -ms-flex-align:start;
+    .css-prefix(box-align,start);
+    .css-prefix(align-items,@value);
+}
+.align-items(@value)when(@value=flex-end){
+    -ms-flex-align:end;
+    .css-prefix(box-align,end);
+    .css-prefix(align-items,@value);
+}
+.align-items(@value:center)when(default()){
+    -ms-flex-align:@value;
+    .css-prefix(box-align,@value);
+    .css-prefix(align-items,@value);
+}
+.align-items(@value)when(@value=stretch){
+    -ms-flex-align:@value;
+    .css-prefix(box-align,@value);
+    .css-prefix(align-items,@value);
 }
 .radius(@x:5px){
     -webkit-border-radius: @x;

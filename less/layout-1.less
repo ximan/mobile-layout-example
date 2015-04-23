@@ -1,0 +1,38 @@
+// common
+@import 'common.less';
+// reset
+@import 'base.less';
+
+body{
+    font-size: 1.2em;
+}
+
+html,body{
+    height: 100%;
+}
+.layout_wrap{
+    padding: 44px 0;
+}
+.layout_head,.layout_foot{
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    font-size: 2rem;
+    background-color: #ccc;
+    color: #f00;
+}
+.layout_head{
+    top: 0;
+}
+.layout_foot{
+    bottom: 0;
+}
+.layout_body{
+    li{
+        line-height: 20px;
+        font-size: 1.4rem;
+    }
+}

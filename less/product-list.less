@@ -15,17 +15,21 @@ h2{
 .wrap{
     border: 1px solid #ccc;
     .item{
-        .flexbox();
         padding: 10px;
         border-bottom: 1px solid #eee;
-        /* 侧轴对齐 */
-        -ms-flex-align:center;
-        -webkit-box-align:center;
-        box-align:center;
-        -webkit-align-items:center;
-        align-items:center;
+        .display(flex);
+        .align-items();
+        &:first-child{
+            .title{
+                .ellipsis();
+            }
+        }
         &:last-child{
-            border-bottom:0 none;
+            border-bottom: none;
+            .title{
+                max-height: 40px;
+                overflow: hidden;
+            }
         }
         .pic{
             width: 60px;
@@ -45,11 +49,6 @@ h2{
             border-top:2px solid #bfbfbf;
             border-right:2px solid #bfbfbf;
             .rotate3d(0, 0, 1, 45deg)
-        }
-        &:first-child{
-            .title{
-                .ellipsis();
-            }
         }
     }
 }
